@@ -1,8 +1,9 @@
 const TailoredResume = () => {
 
-    return <div>
+    return 
+    (<div className={props.className}>
         This is Tailored Resume Page
-    </div>
+    </div>)
 }
 
 export default TailoredResume;

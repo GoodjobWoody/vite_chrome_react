@@ -1,8 +1,9 @@
 const EditableResume = () => {
 
-    return <div>
+    return 
+    (<div className={props.className}>
         This is Editable Resume Page
-    </div>
+    </div>)
 }
 
 export default EditableResume;
