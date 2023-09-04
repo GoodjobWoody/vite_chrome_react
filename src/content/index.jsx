@@ -1,30 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom';
 import EditableResume from './components/editable_resume';
 import TailoredResume from './components/tailored_resume';
+import { Modal } from '@mui/material';
 import './content.scss';
 
 function ResumeComponent() {
-    // You can add shared state or methods here if needed
+    const [open, setOpen] = useState(true);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
-        <div className="container">
-            <EditableResume />
-            <div>This is resume</div>
-            <TailoredResume />
-            {/* ... any other shared components or elements ... */}
-        </div>
+        <Modal open={open} onClose={handleClose} className="container">
+            <div className="resume-container">
+                <div className="editable-resume">
+                    <EditableResume />
+                </div>
+                <div className="tailored-resume">
+                    <TailoredResume />
+                </div>
+            </div>
+        </Modal>
     );
 }
 
+// Create a div for the modal
+const app = document.createElement('div');
+app.id = 'CRX-container';
+document.body.appendChild(app);
 
-// 创建id为CRX-container的div
-const app = document.createElement('div')
-app.id = 'CRX-container'
-// 将刚创建的div插入body最后
-document.body.appendChild(app)
-// 将ReactDOM插入刚创建的div
-const crxContainer = ReactDOM.createRoot(
-    document.getElementById('CRX-container')
-)
-crxContainer.render(<ResumeComponent />)
+// Render the ResumeComponent inside the div
+ReactDOM.render(<ResumeComponent />, app);

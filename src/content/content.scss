@@ -1,7 +1,24 @@
-.content-container{
-    position: relative;
-    width: 100%;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+}
 
+.resume-container {
+    display: flex;
+    justify-content: space-between; // Add some space between the two resumes
+    width: calc(8.5in + 40px); // Width of two letter-sized papers plus some margin
+    max-width: 95%; // Ensure it fits the screen
+    margin: 20px auto; // Center it horizontally and add some vertical spacing
+}
 
+.editable-resume, .tailored-resume {
+    background-color: #fff;
+    width: 8.5in; // Width of letter-sized paper
+    height: 11in; // Height of letter-sized paper
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow-y: auto; // Make it scrollable if content exceeds the height
+    padding: 20px; // Add some inner spacing
 }
