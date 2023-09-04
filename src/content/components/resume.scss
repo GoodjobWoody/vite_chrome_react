@@ -1,0 +1,27 @@
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .modal_content {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 100%;
+        column-gap: 20px;
+
+        .editable-resume,
+        .tailored-resume {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+    }
+
+
+}

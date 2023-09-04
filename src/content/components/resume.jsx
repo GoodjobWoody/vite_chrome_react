@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import EditableResume from './components/editable_resume';
-import TailoredResume from './components/tailored_resume';
+import EditableResume from './editable_resume';
+import TailoredResume from './tailored_resume';
 import { Modal } from '@mui/material';
+import './resume.scss'
 
 function ResumeComponent() {
     const [open, setOpen] = useState(true);
@@ -11,8 +12,8 @@ function ResumeComponent() {
     };
 
     return (
-        <Modal open={open} onClose={handleClose} className="container">
-            <div className="resume-container">
+        <Modal open={open} onClose={handleClose} className="modal_container">
+            <div className="modal_content">
                 <EditableResume className="editable-resume" />
                 <TailoredResume className="tailored-resume" />
             </div>
