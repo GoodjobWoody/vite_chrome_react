@@ -1,0 +1,67 @@
+$primary-blue: #36d1dc;
+$secondary-blue: #5b86e5;
+$border-color: #d4d4d4;
+$hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 300px; // Constrained width for Chrome extension popup
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid $border-color;
+  background-color: #ffffff;
+  box-shadow: $hover-shadow;
+  border-radius: 8px;
+  width: 100%;
+
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+    .upload-input {
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      color: $primary-blue;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: $hover-shadow;
+      }
+    }
+
+    .upload-button {
+      background: linear-gradient(to right, $primary-blue, $secondary-blue);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(to right, darken($primary-blue, 10%), darken($secondary-blue, 10%));
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
